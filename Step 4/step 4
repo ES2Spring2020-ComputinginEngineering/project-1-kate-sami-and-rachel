@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Mar  5 10:51:32 2020
+
+@author: samirothstein
+"""
+import array as np
+#import pandas
+#array = pandas.read_csv('8-75in.csv')
+#print(array)
+
+array = np.loadtxt('8-75in', delimiter=',')
+array1 = np.loadtxt('11in', delimiter=',')
+array2 = np.loadtxt('13in', delimiter=',')
+array3 = np.loadtxt('15in', delimiter=',')
+array4 = np.loadtxt('17in', delimiter=',')
+
+print(array)
