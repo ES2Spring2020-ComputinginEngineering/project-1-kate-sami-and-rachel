@@ -5,15 +5,54 @@ Created on Thu Mar  5 10:51:32 2020
 
 @author: samirothstein
 """
-import array as np
-#import pandas
-#array = pandas.read_csv('8-75in.csv')
-#print(array)
+#import statements
+import numpy as np
+import matplotlib.pyplot as plt
 
-array = np.loadtxt('8-75in', delimiter=',')
-array1 = np.loadtxt('11in', delimiter=',')
-array2 = np.loadtxt('13in', delimiter=',')
-array3 = np.loadtxt('15in', delimiter=',')
-array4 = np.loadtxt('17in', delimiter=',')
 
-print(array)
+
+array = np.loadtxt('8-75in.csv', delimiter=',')
+array1 = np.loadtxt('11in.csv', delimiter=',')
+array2 = np.loadtxt('13in.csv', delimiter=',')
+array3 = np.loadtxt('15in.csv', delimiter=',')
+array4 = np.loadtxt('17in.csv', delimiter=',')
+
+fig, axs = plt.subplots(2)
+
+#*******************************************
+
+#acc_x 8-75in graph *
+x1 = array[:,0]
+y1 = array[0:,1]
+plt.figure()
+axs[0].plot(x1,y1)
+axs[0].set_title('X Acceleration vs. Time')
+axs[0].set_xlabel('Time (msec.)')
+axs[0].set_ylabel('Acceleration (m/s^2.)')
+axs[0].set_xlim(0, 8000)
+
+
+#acc_y 8-75in graph *
+x2 = array[:,0]
+y2 = array[:,2]
+plt.figure()
+axs[1].plot(x2,y2)
+axs[1].set_title('Y Acceleration vs. Time')
+axs[1].set_xlabel('Time (msec.)')
+axs[1].set_ylabel('Acceleration (m/s^2.)')
+axs[1].set_xlim(0, 8000)
+
+fig.tight_layout()
+
+
+#acc_z 8-75in graph
+#x3 = array[:,0]
+#y3 = array[:,3]
+#plt.figure()
+#plt.plot(x3,y3)
+#plt.title('Z Acceleration vs. Time')
+#plt.xlabel('Time (msec.)')
+#plt.ylabel('Acceleration (m/s^2.)')
+#plt.xlim(0, 8000)
+
+#plt.show

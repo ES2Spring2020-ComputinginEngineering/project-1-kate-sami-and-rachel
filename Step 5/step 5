@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar 29 11:38:29 2020
+
+@author: samirothstein
+"""
+
+#import statements
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+#functions
+def update_system(acc,theta,vel,time1,time2):
+    dt = time2-time1
+    thetaNext = theta+vel*dt
+    velNext = vel+acc*dt
+    return thetaNext,velNext
+
+#initial conditions
+vel = [0]
+acc = [0]
+theta = [np.pi/2]
+time = np.linspace[0,20,10000]
+
+i = 1
+while i < len(time):
+    thetaNext,velNext = update_system(acc[i],theta[i-1],vel[i-1],time[i-1],time[i])
+    theta.append(thetaNext)
+    vel.append(velNext)
+    i +=1
+  
+

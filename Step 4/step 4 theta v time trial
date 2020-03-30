@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Mar 27 16:02:47 2020
+
+@author: samirothstein
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+#import math
+
+
+array = np.loadtxt('8-75in.csv', delimiter=',')
+array1 = np.loadtxt('11in.csv', delimiter=',')
+array2 = np.loadtxt('13in.csv', delimiter=',')
+array3 = np.loadtxt('15in.csv', delimiter=',')
+array4 = np.loadtxt('17in.csv', delimiter=',')
+
+def find_tilt_z(acc_x, acc_y, acc_z):
+    tiltZ=((math.atan2(acc_z,(math.sqrt((y**2)+(x**2)))))*180)/(math.pi)
+    return tiltZ
+    
+acc_x = array[:,1]
+acc_y = array[:,2]
+acc_z = array[:,3]
+
+acc_x11 = array1[:,1]
+acc_y11 = array1[:,2]
+acc_z11 = array1[:,3]
+
+acc_x13 = array2[:,1]
+acc_y13 = array2[:,2]
+acc_z13 = array2[:,3]
+
+acc_x15 = array3[:,1]
+acc_y15 = array3[:,2]
+acc_z15 = array3[:,3]
+
+acc_x17 = array4[:,1]
+acc_y17 = array4[:,2]
+acc_z17 = array4[:,3]
+
+fig, (ax1, ax2, ax3, ax4, ax5) = plt.subplots(5, figsize=[10,8],sharex=True)
+x1 = array[:,0]
+y1 = find_tilt_z(acc_x, acc_y, acc_z)
+ax1.plot(x1, y1, "#ff7f0e")
+ax1.set_title('Theta vs Time 8.75in')
+ax1.set_ylabel ('Theta (rad)')
+
+x2 = array1[:,0]
+y2 = find_tilt_z(acc_x11, acc_y11, acc_z11)
+ax2.plot(x2, y2, "#ff7f0e")
+ax2.set_title('Theta vs Time 11in')
+ax2.set_ylabel ('Theta (rad)')
+
+x3 = array2[:,0]
+y3 = find_tilt_z(acc_x13, acc_y13, acc_z13)
+ax3.plot(x3, y3, "#ff7f0e")
+ax3.set_title('Theta vs Time 13in')
+ax3.set_ylabel ('Theta (rad)')
+
+x4 = array3[:,0]
+y4 = find_tilt_z(acc_x15, acc_y15, acc_z15)
+ax4.plot(x4, y4, "#ff7f0e")
+ax4.set_title('Theta vs Time 15in')
+ax4.set_ylabel ('Theta (rad)')
+
+x5 = array4[:,0]
+y5 = find_tilt_z(acc_x17, acc_y17, acc_z17)
+ax5.plot(x5, y5, "#ff7f0e")
+ax5.set_title('Theta vs Time 15in')
+ax5.set_ylabel ('Theta (rad)')
+
+plt.tight_layout()
+plt.show()

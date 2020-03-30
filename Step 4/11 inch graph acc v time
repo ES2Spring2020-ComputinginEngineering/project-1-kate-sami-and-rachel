@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Mar 26 20:53:27 2020
+
+@author: samirothstein
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+#import pandas
+#array = pandas.read_csv('8-75in.csv')
+#print(array)
+
+array = np.loadtxt('8-75in.csv', delimiter=',')
+array1 = np.loadtxt('11in.csv', delimiter=',')
+array2 = np.loadtxt('13in.csv', delimiter=',')
+array3 = np.loadtxt('15in.csv', delimiter=',')
+array4 = np.loadtxt('17in.csv', delimiter=',')
+
+fig1, axs1 = plt.subplots(2)
+
+#acc_x 8-75in graph *
+x1 = array1[:,0]
+y1 = array1[0:,1]
+plt.figure()
+axs1[0].plot(x1,y1)
+axs1[0].set_title('X Acceleration vs. Time')
+axs1[0].set_xlabel('Time (msec.)')
+axs1[0].set_ylabel('Acceleration (m/s^2.)')
+axs1[0].set_xlim(0, 8000)
+
+
+#acc_y 8-75in graph *
+x2 = array1[:,0]
+y2 = array1[:,2]
+plt.figure()
+axs1[1].plot(x2,y2)
+axs1[1].set_title('Y Acceleration vs. Time')
+axs1[1].set_xlabel('Time (msec.)')
+axs1[1].set_ylabel('Acceleration (m/s^2.)')
+axs1[1].set_xlim(0, 8000)
+
+fig1.tight_layout()

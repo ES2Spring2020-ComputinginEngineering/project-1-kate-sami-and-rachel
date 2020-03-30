@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar 28 13:12:50 2020
+
+@author: samirothstein
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.signal as sig
+
+
+array = np.loadtxt('8-75in.csv', delimiter=',')
+array1 = np.loadtxt('11in.csv', delimiter=',')
+array2 = np.loadtxt('13in.csv', delimiter=',')
+array3 = np.loadtxt('15in.csv', delimiter=',')
+array4 = np.loadtxt('17in.csv', delimiter=',')
+
+tiltZ_875 = sig.medfilt(np.arctan2(array[:,1], np.sqrt(array[:,2] ** 2) + (array[:,3] ** 2)), 3)
+tiltZ_11 = sig.medfilt(np.arctan2(array1[:,1], np.sqrt(array1[:,2] ** 2) + (array1[:,3] ** 2)), 3)
+tiltZ_13 = sig.medfilt(np.arctan2(array2[:,1], np.sqrt(array2[:,2] ** 2) + (array2[:,3] ** 2)), 3)
+tiltZ_15 = sig.medfilt(np.arctan2(array3[:,1], np.sqrt(array3[:,2] ** 2) + (array3[:,3] ** 2)), 3)
+tiltZ_17 = sig.medfilt(np.arctan2(array4[:,1], np.sqrt(array4[:,2] ** 2) + (array4[:,3] ** 2)), 3)
+
+
+
+
+
