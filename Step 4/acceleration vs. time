@@ -7,7 +7,6 @@ Created on Thu Mar  5 10:51:32 2020
 """
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 
 
 array = np.loadtxt('8-75in.csv', delimiter=',')
@@ -18,9 +17,7 @@ array4 = np.loadtxt('17in.csv', delimiter=',')
 
 #*****************************************************
 
-#def find_tilt_z(acc_x, acc_y, acc_z):
-#    tiltZ=((math.atan2(acc_z,(math.sqrt((acc_y**2)+(acc_x**2)))))*180)/(math.pi)
-#    return tiltZ
+
 
 
 fig, axs = plt.subplots(2)
