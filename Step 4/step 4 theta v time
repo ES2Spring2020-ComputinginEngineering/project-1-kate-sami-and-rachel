@@ -115,6 +115,8 @@ y_filt_pks, _ = sig.find_peaks(y_filt[:-50])
 plt.plot(time[:-50], y[:-50], 'r-', time[y_filt_pks], y_filt[y_filt_pks], 'b.')
 #plt.plot(time[:-50], y[:-50], 'r-', time[y_filt_pks[:-50]], y_filt[y_filt_pks[:-50]], 'b.')
 plt.title('8.75 with peaks')
+plt.xlabel('Time (s)')
+plt.ylabel('Theta (rad)')
 plt.show()
 
 
