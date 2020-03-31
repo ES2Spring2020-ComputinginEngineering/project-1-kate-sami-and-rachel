@@ -59,7 +59,7 @@ def graph_time(acceleration,velocity,theta,time):
     plt.show()
 
 def graph_period(length,avgT):
-    plt.plot(length,avgT)
+    plt.plot(length,avgT,'.')
     plt.ylabel('Period (s)')
     plt.xlabel('Length (in.)')
     plt.title('Length vs. Period')
@@ -77,8 +77,12 @@ avgT=np.array([])
 
 
 
-i = 1
+#main script
 for x in length:
+    i = 1
+    vel = np.array([0])
+    acc = np.array([0])
+    theta = [np.pi/2]
     while i < len(time):
         thetaNext,velNext, accNext = update_system(acc[i-1],theta[i-1],vel[i-1],x)
         theta = np.append(theta, thetaNext)
