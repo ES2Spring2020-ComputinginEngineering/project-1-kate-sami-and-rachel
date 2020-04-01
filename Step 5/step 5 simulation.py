@@ -37,6 +37,7 @@ def update_system(acc,theta,vel,l):
 #    in.
     return thetaNext,velNext,accNext
 
+
 def period(theta):
 # This function takes one parameter: theta. It determines the period based
 # on theta (its angular position). It returns the average period and a list
