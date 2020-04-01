@@ -139,7 +139,7 @@ y_filt_pks, _ = sig.find_peaks(y_filt[:-50])
 plt.plot(time[:-50], y[:-50], 'r-', time[y_filt_pks], y_filt[y_filt_pks], 'b.')
 plt.title('8.75 with peaks')
 plt.xlabel('Time (s)')
-plt.ylabel('Theta (rad)')
+plt.ylabel('X Acc (m/s^2)')
 plt.show()
 
 
@@ -151,12 +151,12 @@ plt.title('Length vs Period')
 plt.xlabel('Length (in)')
 plt.ylabel('Period (ms)')
 
-
-print(period(array))
-print(period(array1))
-print(period(array2))
-print(period(array3))
-print(period(array4))
+#
+#print(period(array))
+#print(period(array1))
+#print(period(array2))
+#print(period(array3))
+#print(period(array4))
 
 
 
